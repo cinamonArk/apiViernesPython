@@ -18,4 +18,7 @@ servidorLocalHost = "localhost"
 ConnectionPort="3306"
 
 #creando la conexion
-conexionToDataBase=f"mysql"
+conexionToDataBase=f"mysql+mysqlconnector://{userName} :{UserPassword}@{servidorLocalHost}:{ConnectionPort}/{dataBaseName}"
+engine = create_engine(conexionToDataBase)
+sessionLocal=sessionmakert(auticommint=False, autoflush=False, bind=engine) 
+
